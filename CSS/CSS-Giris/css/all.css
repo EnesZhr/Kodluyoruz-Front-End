@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    color: crimson;
+}
+
+h2 {
+    color: #9C19E0;
+}
+h3 {
+    color: #D4AC2B;
+}
+
+ul,ol {
+    list-style-position: inside;
+}
+
+div>a {
+    margin: 0px 10px;
+} 
+
+img {
+    width: 600px;
+    height: 400px;
+}
