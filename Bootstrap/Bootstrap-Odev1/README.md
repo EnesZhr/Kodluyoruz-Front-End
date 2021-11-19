@@ -1,4 +1,4 @@
 # Müzik Dükkanım
 
-![Müzik](img/MüzikDükkanım.png)
+![](img/muzik.png)
 
