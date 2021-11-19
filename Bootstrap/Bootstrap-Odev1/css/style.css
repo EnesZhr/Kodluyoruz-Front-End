@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    background: #E9ECEF;
+}
+
+
+.hcolor {
+    color: #9C19E0;
+}
+h3 {
+    color: #D4AC2B;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+div>a {
+    margin: 0px 10px;
+} 
+
+.card-text {
+    color: white;
+    padding: 0px 5px;
+    margin-top: auto !important;
+    border-radius: 5px;
+    background-color: gray !important;
+}
