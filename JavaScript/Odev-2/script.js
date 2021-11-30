@@ -1,49 +1,59 @@
 const newItem = document.querySelector('#task')
 const addButon = document.querySelector('#liveToastBtn')
 const itemList = document.querySelector('#list')
-const itemChecked = document.querySelector('#listli')
+const allItem = document.querySelectorAll('li')
+
+allItem.forEach(item =>{
+  const deleteButton = document.createElement('i');
+  deleteButton.classList.add("fas","fa-eraser","close","delete", "btn-danger");
+  item.classList.add('line');
+  item.append(deleteButton);
+})
 
 addButon.addEventListener('click', newElement);
 
 let counter = 0;
 
-function newElement () {
-  if(newItem.value == "") {
-    $('.error').toast('show');
-  }else {
+function newElement (e) {
+  e.preventDefault();
 
-    let li = document.createElement('li')
-    li.innerHTML = newItem.value
+  const trimValue = newItem.value.trim();
 
-    let i = document.createElement('i')
+  if(trimValue.length){
+    counter ++;
 
-    i.classList = "fas fa-eraser btn btn-danger close dltButton checked"
+    let li = document.createElement('li');
+    li.classList.add('line');
+    li.innerHTML = `${trimValue}<i class="fas fa-eraser close delete btn-danger"></i>`;
 
-    li.appendChild(i);
+    itemList.append(li);
 
-    itemList.appendChild(li);
+    newItem.value = "";
 
-    newItem.value = ""
-   
+    localStorage.setItem(`Ekleme${counter}`,trimValue);
+  
     $('.success').toast('show');
     
-    itemList.addEventListener('click' ,deleteElement);
-    
-    localStorage.setItem(`${counter}`,newItem)
-  }
-
-  itemChecked.addEventListener('click',(e)=> {
-    if(e.target.classList('close')) {
-      e.target.classList('checked')
+  }else{
+    $('.error').toast('show');
     }
-  })
   
 }
 
+itemList.addEventListener('click', (e)=> {
+  if(e.target.classList.contains('delete')){
+    e.target.parentElement.remove();
+  }
+});
 
-function deleteElement() {
-  let itemListNew = document.querySelector('.dltButton').parentElement.remove()
-}
+
+itemList.addEventListener('click', (e) =>{
+  if(e.target.classList.contains('line')){
+    e.target.classList.toggle('checked');
+  }
+});
+
+
 
 
 
