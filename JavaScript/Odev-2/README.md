@@ -1,4 +1,4 @@
 # TODO LİST
 
 
-![TodoList](img/todolistsonhali.png)
+![TodoList](img/Todolistsonhali.png)
