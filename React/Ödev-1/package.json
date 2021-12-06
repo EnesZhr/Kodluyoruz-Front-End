@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node index"
+  },
+  "main": "app.js",
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
